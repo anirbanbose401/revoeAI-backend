@@ -17,7 +17,7 @@ const app = express();
 const server = http.createServer(app); // Creating an HTTP server
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // Allow frontend origin
+        origin: "https://revoe-ai-frontend.vercel.app", // Allow frontend origin
         credentials: true, // Allow cookies and authentication headers
     },
 });
