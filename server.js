@@ -35,7 +35,7 @@ app.use(helmet()); // Security middleware to protect HTTP headers
 // CORS (Cross-Origin Resource Sharing) setup to allow frontend requests
 app.use(
     cors({
-        origin: "http://localhost:5173", // Allow frontend to access API
+        origin: "https://revoe-ai-frontend.vercel.app", // Allow frontend to access API
         credentials: true, // Allow credentials (cookies, authorization headers)
         methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
         allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
