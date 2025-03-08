@@ -68,11 +68,11 @@ router.post("/login", async (req, res) => {
 
     // ✅ Set token as HTTP-only cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // ✅ Secure in production
-      sameSite: "Strict",
-      maxAge: 3600000 // ✅ 1 hour
-    });
+    httpOnly: true,
+    secure: true,  // ✅ Required for HTTPS (Render uses HTTPS)
+    sameSite: "None",  // ✅ Required for cross-origin cookies
+    maxAge: 3600000, // ✅ 1 hour
+});
 
     res.json({ message: "Login successful", user: { id: user._id, name: user.name, email: user.email } });
 

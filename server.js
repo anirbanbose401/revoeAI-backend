@@ -41,6 +41,7 @@ app.use(
         allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     })
 );
+app.set("trust proxy", 1); // ✅ Required for cookies to work on Render
 
 // Rate Limiter to prevent abuse (limits each IP to 100 requests per 15 minutes)
 app.use(
