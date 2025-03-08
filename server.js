@@ -116,7 +116,7 @@ io.on("connection", async (socket) => {
                 cachedData = newData; // Update cache
             } else {
                 socket.emit("sheetData", cachedData);
-                // console.log("✅ No changes detected.");
+                console.log("✅ No changes detected.");
             }
         } catch (error) {
             console.error("❌ Error checking Google Sheets updates:", error.message);
